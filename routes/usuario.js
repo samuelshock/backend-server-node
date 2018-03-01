@@ -14,7 +14,13 @@ var UserModel = require('../models/user');
 // Obtener Todos los Usuarios
 // ======================================
 app.get('/', (req, res, next) => {
+
+    var since = req.query.since || 0;
+    since = Number(since);
+
     UserModel.find({}, 'name email img role')
+        .skip(since)
+        .limit(5)
         .exec(
             (err, users) => {
                 if (err) {
@@ -25,9 +31,12 @@ app.get('/', (req, res, next) => {
                     });
                 }
 
-                res.status(200).json({
-                    ok: true,
-                    users: users
+                UserModel.count({}, (err, counter) => {
+                    res.status(200).json({
+                        ok: true,
+                        users: users,
+                        total: counter
+                    });
                 });
 
             });

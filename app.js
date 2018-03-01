@@ -6,7 +6,10 @@ var bodyParser = require('body-parser');
 // Import routes 
 var appRoutes = require('./routes/app');
 var usuarioRoutes = require('./routes/usuario');
+var hospitalRoutes = require('./routes/hospital');
+var medicoRoutes = require('./routes/medico');
 var loginRoutes = require('./routes/login');
+var busquedaRoutes = require('./routes/busqueda');
 
 // Init variables
 var app = express();
@@ -25,6 +28,9 @@ mongoose.connection.openUri('mongodb://localhost:27017/hospitalDB', (err, res) =
 // Rutas
 app.use('/login', loginRoutes);
 app.use('/user', usuarioRoutes);
+app.use('/hospital', hospitalRoutes);
+app.use('/medico', medicoRoutes);
+app.use('/search', busquedaRoutes);
 app.use('/', appRoutes);
 
 

@@ -1,20 +1,23 @@
 var express = require('express');
-var bcrypt = require('bcryptjs');
-var jwt = require('jsonwebtoken');
 
 var mdaAthentication = require('../middlewares/authentication');
 
-// var SEED = require('../config/config').SEED;
-
 var app = express();
 
-var HospitalModel = require('../models/user');
+var HospitalModel = require('../models/hospital');
 
 // ======================================
 // Obtener Todos los Hospitales
 // ======================================
 app.get('/', (req, res, next) => {
-    HospitalModel.find({}, '*')
+
+    var since = req.query.since || 0;
+    since = Number(since);
+
+    HospitalModel.find({})
+        .skip(since)
+        .limit(5)
+        .populate("user", "name email")
         .exec(
             (err, items) => {
                 if (err) {
@@ -24,10 +27,12 @@ app.get('/', (req, res, next) => {
                         error: err
                     });
                 }
-
-                res.status(200).json({
-                    ok: true,
-                    hospitales: items
+                HospitalModel.count({}, (err, counter) => {
+                    res.status(200).json({
+                        ok: true,
+                        hospitales: items,
+                        total: counter
+                    });
                 });
 
             });
@@ -44,7 +49,7 @@ app.post('/', mdaAthentication.verifyToken, (req, res) => {
     var newItem = new HospitalModel({
         nombre: body.name,
         img: body.email,
-        user: body.user._id
+        user: req.user._id
     });
 
 
@@ -92,7 +97,8 @@ app.put('/:id', mdaAthentication.verifyToken, (req, res) => {
         }
 
         itemValid.nombre = body.name;
-        itemValid.img = body.img;
+        itemValid.img = body.img ? body.img : itemValid.img || "";
+        itemValid.user = req.user._id;
 
         itemValid.save((err, itemSaved) => {
             if (err) {

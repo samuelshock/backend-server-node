@@ -1,19 +1,25 @@
 var express = require('express');
-var bcrypt = require('bcryptjs');
-var jwt = require('jsonwebtoken');
 
 var mdaAthentication = require('../middlewares/authentication');
 
 
 var app = express();
 
-var MedicoModel = require('../models/user');
+var MedicoModel = require('../models/medico');
 
 // ======================================
 // Obtener Todos los Medicos
 // ======================================
 app.get('/', (req, res, next) => {
-    MedicoModel.find({}, '*')
+
+    var since = req.query.since || 0;
+    since = Number(since);
+
+    MedicoModel.find({})
+        .skip(since)
+        .limit(5)
+        .populate("user", "name email")
+        .populate("hospital")
         .exec(
             (err, items) => {
                 if (err) {
@@ -23,10 +29,12 @@ app.get('/', (req, res, next) => {
                         error: err
                     });
                 }
-
-                res.status(200).json({
-                    ok: true,
-                    Medicos: items
+                MedicoModel.count({}, (err, counter) => {
+                    res.status(200).json({
+                        ok: true,
+                        Medicos: items,
+                        total: counter
+                    });
                 });
 
             });
@@ -43,7 +51,7 @@ app.post('/', mdaAthentication.verifyToken, (req, res) => {
     var newItem = new MedicoModel({
         nombre: body.name,
         img: body.email,
-        user: body.user._id,
+        user: req.user._id,
         hospital: body.hospital_id
     });
 
