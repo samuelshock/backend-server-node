@@ -7,6 +7,62 @@ var MedicoModel = require("../models/medico");
 var UserModel = require("../models/user");
 
 
+
+// ================================
+// Busqueda por coleccion
+// ================================
+app.get('/coleccion/:tabla/:busqueda', (req, res, next) => {
+    var busqueda = req.params.busqueda;
+    var regex = new RegExp(busqueda, "i");
+    var tabla = req.params.tabla;
+
+    var finder = null;
+    switch (tabla) {
+        case "medicos":
+            {
+                finder = findMedicos(regex);
+                break;
+            }
+        case "hospitales":
+            {
+                finder = findHospitals(regex);
+                break;
+            }
+        case "usuarios":
+            {
+                finder = findUsers(regex);
+                break;
+            }
+        default:
+            {
+                return res.status(400).json({
+                    ok: false,
+                    message: 'Error',
+                    error: { message: "No existe la coleccion." }
+                });
+            }
+    }
+
+    finder.then(result => {
+        res.status(200).json({
+            ok: true,
+            [tabla]: result
+        });
+    }).catch(err => {
+        res.status(500).json({
+            ok: false,
+            message: 'Error',
+            error: err
+        });
+    });
+
+
+});
+
+
+// ================================
+// Busqueda general
+// ================================
 app.get('/todo/:busqueda', (req, res, next) => {
 
     var busqueda = req.params.busqueda;
