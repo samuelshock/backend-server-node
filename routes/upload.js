@@ -28,8 +28,6 @@ app.put('/:tipo/:id', function(req, res) {
         });
     }
 
-    console.log(req.files);
-
     if (!req.files) {
         return res.status(400).json({
             ok: false,
@@ -45,7 +43,7 @@ app.put('/:tipo/:id', function(req, res) {
 
     var validExtension = ["png", "jpg", "gif", "jpeg"];
 
-    if (validExtension.indexOf(extensionFile) < 0) {
+    if (validExtension.indexOf(extensionFile.toLowerCase()) < 0) {
         return res.status(400).json({
             ok: false,
             message: 'Extension no valida',
@@ -70,35 +68,64 @@ app.put('/:tipo/:id', function(req, res) {
         }
 
         uploadbyType(tipo, id, fileName, res);
-        /*res.status(200).json({
-            ok: true,
-            message: 'Peticion realizada correctamente - archivo movido'
-        });*/
+
     });
 });
 
 function uploadbyType(type, id, fileName, res) {
-    if (type === "usuarios") {
-        UserModel.findById(id, (err, user) => {
-            var lastPath = "./uploads/usuarios/" + user.img;
-
-            // Si existe, elimina la imagen anterior
-            if (fs.existsSync(lastPath)) {
-                fs.unlink(lastPath);
-            }
-
-            user.img = fileName;
-
-            user.save((err, userSaved) => {
-                return res.status(200).json({
-                    ok: true,
-                    message: 'Imagen actualizada',
-                    usuario: userSaved
+    var objRequest = null;
+    switch (type) {
+        case "usuarios":
+            objRequest = UserModel;
+            break;
+        case "medicos":
+            objRequest = MedicoModel;
+            break;
+        case "hospitales":
+            objRequest = HospitalModel;
+            break;
+        default:
+            {
+                return res.status(400).json({
+                    ok: false,
+                    message: 'Error',
+                    error: { message: "No existe la coleccion." }
                 });
-            });
-
-        });
+            }
     }
+
+    objRequest.findById(id, (err, item) => {
+
+        if (!item) return res.status(400).json({
+            ok: false,
+            message: 'Error al buscar ' + type,
+            error: { message: 'No existe el record en el modelo ' + type + ' con id: ' + id }
+        });
+        if (err) return res.status(400).json({
+            ok: false,
+            message: 'Error al buscar ' + type,
+            error: err
+        });
+        var lastPath = `./uploads/${type}/${item.img}`;
+
+        // Si existe, elimina la imagen anterior
+        if (fs.existsSync(lastPath)) {
+            fs.unlink(lastPath);
+        }
+
+        item.img = fileName;
+
+        item.save((err, data) => {
+
+            return res.status(200).json({
+                ok: true,
+                message: 'Imagen actualizada',
+                [type]: data
+            });
+        });
+
+    });
+
 }
 
 module.exports = app;
