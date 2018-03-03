@@ -14,7 +14,8 @@ var userSchema = new Schema({
     email: { type: String, unique: true, required: [true, 'El correo es necesario'] },
     password: { type: String, required: [true, 'El contrasena es necesaria'] },
     img: { type: String, required: false },
-    role: { type: String, required: true, default: 'USER_ROLE', enum: validRoles }
+    role: { type: String, required: true, default: 'USER_ROLE', enum: validRoles },
+    google: { type: Boolean, required: true, default: false }
 });
 
 userSchema.plugin(uniqueValidator, { message: 'El {PATH} ya fue registrado.' });

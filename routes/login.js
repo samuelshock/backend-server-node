@@ -3,18 +3,112 @@ var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 
 var SEED = require('../config/config').SEED;
+const GOOGLE_CLIENT_ID = require('../config/config').GOOGLE_CLIENT_ID;
+const GOOGLE_SECRET = require('../config/config').GOOGLE_SECRET;
 
 var app = express();
 
 var UserModel = require('../models/user');
 
+var { OAuth2Client } = require('google-auth-library');
+
+// =================================
+// Autenticacion de Google
+// ================================= 
+
+app.post('/google', (req, res, next) => {
+
+    var token = req.body.token;
+
+    var client = new OAuth2Client(GOOGLE_CLIENT_ID, GOOGLE_SECRET, '');
+    async function verify() {
+        const ticket = await client.verifyIdToken({
+            idToken: token,
+            audience: GOOGLE_CLIENT_ID, // Specify the CLIENT_ID of the app that accesses the backend
+            // Or, if multiple clients access the backend:
+            //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
+        });
+        const payload = ticket.getPayload();
+        const userid = payload['sub'];
+        // If request specified a G Suite domain:
+        //const domain = payload['hd'];
+
+        UserModel.findOne({ email: payload.email }, (err, userDB) => {
+            if (err) {
+                return res.status(500).json({
+                    ok: false,
+                    message: 'Error al buscar Usuario',
+                    error: err
+                });
+            }
+
+            if (userDB) {
+                if (userDB.google) {
+                    // create token!!
+                    userDB.password = ':)';
+                    var token = jwt.sign({ user: userDB }, SEED, { expiresIn: 14400 });
+
+                    res.status(200).json({
+                        ok: true,
+                        user: userDB,
+                        token: token,
+                        id: userDB._id
+                    });
+                } else {
+                    return res.status(400).json({
+                        ok: false,
+                        message: 'Debe de usar su autenticacion normal'
+                    });
+                }
+            } else {
+                var newUser = new UserModel();
+
+                newUser.name = payload.name;
+                newUser.email = payload.email;
+                newUser.password = ':)';
+                newUser.img = payload.picture;
+                newUser.google = true;
+
+                newUser.save((err, user) => {
+                    if (err) {
+                        return res.status(500).json({
+                            ok: false,
+                            message: 'Error al Crear Usuario',
+                            error: err
+                        });
+                    }
+                    user.password = ':)';
+                    var token = jwt.sign({ user: user }, SEED, { expiresIn: 14400 });
+
+                    res.status(200).json({
+                        ok: true,
+                        user: user,
+                        token: token,
+                        id: user._id
+                    });
+                });
+            }
+        });
+
+    }
+    verify().catch(err => {
+        return res.status(500).json({
+            ok: false,
+            message: 'Error al autenticar usuario',
+            error: err
+        });
+    });
+
+});
+
+// =================================
+// Autenticacion normal
+// ================================= 
 app.post('/', (req, res, next) => {
 
     var body = req.body;
 
     UserModel.findOne({ email: body.email }, (err, userDB) => {
-        console.log('error: ', err);
-        console.log('user: ', userDB);
 
         if (err) {
             return res.status(500).json({
