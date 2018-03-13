@@ -18,7 +18,7 @@ app.get('/', (req, res, next) => {
     var since = req.query.since || 0;
     since = Number(since);
 
-    UserModel.find({}, 'name email img role')
+    UserModel.find({}, 'name email img role google')
         .skip(since)
         .limit(5)
         .exec(

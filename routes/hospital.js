@@ -38,6 +38,36 @@ app.get('/', (req, res, next) => {
             });
 });
 
+// ======================================
+// Obtener Hospital por ID
+// ======================================
+app.get('/:id', (req, res, next) => {
+    var id = req.params.id;
+    HospitalModel.findById(id)
+        .populate("user", "name img email")
+        .exec(
+            (err, item) => {
+                if (err) {
+                    return res.status(500).json({
+                        ok: false,
+                        message: 'Error al buscar Hospital',
+                        error: err
+                    });
+                }
+
+                if (!item) {
+                    return res.status(500).json({
+                        ok: false,
+                        message: 'El hospital con el id ' + id + ' no existe',
+                        error: { message: 'No existe un hospital con ese ID' }
+                    });
+                }
+                res.status(200).json({
+                    ok: true,
+                    hospital: item
+                });
+            });
+});
 
 // ======================================
 // Crear un Hospital
@@ -47,7 +77,7 @@ app.post('/', mdaAthentication.verifyToken, (req, res) => {
     var body = req.body;
 
     var newItem = new HospitalModel({
-        nombre: body.name,
+        nombre: body.nombre,
         img: body.email,
         user: req.user._id
     });
@@ -96,7 +126,7 @@ app.put('/:id', mdaAthentication.verifyToken, (req, res) => {
             });
         }
 
-        itemValid.nombre = body.name;
+        itemValid.nombre = body.nombre;
         itemValid.img = body.img ? body.img : itemValid.img || "";
         itemValid.user = req.user._id;
 
