@@ -115,7 +115,7 @@ function findMedicos(regex) {
 
 function findUsers(regex) {
     return new Promise((resolve, reject) => {
-        UserModel.find({}, "name email role google")
+        UserModel.find({}, "name img email role google")
             .or([{ name: regex }, { email: regex }])
             .exec((err, result) => {
                 if (err) reject("Error al cargar usuarios: ", err);

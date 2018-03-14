@@ -47,12 +47,12 @@ app.post('/google', (req, res, next) => {
                     // create token!!
                     userDB.password = ':)';
                     var token = jwt.sign({ user: userDB }, SEED, { expiresIn: 14400 });
-
                     res.status(200).json({
                         ok: true,
                         user: userDB,
                         token: token,
-                        id: userDB._id
+                        id: userDB._id,
+                        menu: getMenu(userDB.role)
                     });
                 } else {
                     return res.status(400).json({
@@ -84,7 +84,8 @@ app.post('/google', (req, res, next) => {
                         ok: true,
                         user: user,
                         token: token,
-                        id: user._id
+                        id: user._id,
+                        menu: getMenu(user.role)
                     });
                 });
             }
@@ -142,11 +143,38 @@ app.post('/', (req, res, next) => {
             ok: true,
             user: userDB,
             token: token,
-            id: userDB._id
+            id: userDB._id,
+            menu: getMenu(userDB.role)
         });
     });
 });
 
+function getMenu(ROLE) {
+    var menu = [{
+            title: 'MainMenu',
+            icon: 'mdi mdi-gauge',
+            submenu: [
+                { title: 'Dashboard', url: '/dashboard' },
+                { title: 'ProgressBar', url: '/progress' },
+                { title: 'Grafica', url: '/graficas1' },
+                { title: 'Promesas', url: '/promesas' },
+                { title: 'RXJS', url: '/rxjs' }
+            ]
+        },
+        {
+            title: 'Mantenimiento',
+            icon: 'mdi mdi-folder-lock-open',
+            submenu: [
+                { title: 'Hospitales', url: '/hospitales' },
+                { title: 'Medicos', url: '/medicos' }
+            ]
+        }
+    ];
+    if (ROLE === "ADMIN_ROLE") {
+        menu[1].submenu.unshift({ title: 'Usuarios', url: '/usuarios' });
+    }
 
+    return menu;
+}
 
 module.exports = app;
