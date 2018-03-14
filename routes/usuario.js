@@ -79,7 +79,7 @@ app.post('/', (req, res) => {
 // ======================================
 // Actualizar usuario
 // ======================================
-app.put('/:id', mdaAthentication.verifyToken, (req, res) => {
+app.put('/:id', [mdaAthentication.verifyToken, mdaAthentication.verifyRole], (req, res) => {
 
     var id = req.params.id;
     var body = req.body;
@@ -105,7 +105,6 @@ app.put('/:id', mdaAthentication.verifyToken, (req, res) => {
         userValid.name = body.name;
         userValid.email = body.email;
         userValid.role = body.role;
-        userValid.password = ':)';
 
         userValid.save((err, userSaved) => {
             if (err) {
@@ -115,6 +114,7 @@ app.put('/:id', mdaAthentication.verifyToken, (req, res) => {
                     error: err
                 });
             }
+            userSaved.password = ':)';
             res.status(200).json({
                 ok: true,
                 user: userSaved
@@ -127,7 +127,7 @@ app.put('/:id', mdaAthentication.verifyToken, (req, res) => {
 // ======================================
 // Eliminar usuario
 // ======================================
-app.delete('/:id', mdaAthentication.verifyToken, (req, res) => {
+app.delete('/:id', [mdaAthentication.verifyToken, mdaAthentication.verifyRole], (req, res) => {
 
     var id = req.params.id;
     var body = req.body;
