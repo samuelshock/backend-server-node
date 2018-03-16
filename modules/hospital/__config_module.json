@@ -1,0 +1,7 @@
+{
+    "name": "Hospital",
+    "description": "este es un modulo de hospital",
+    "dependencies": [],
+    "model": "./hospital.model.js",
+    "route": "./index.route.js"
+}

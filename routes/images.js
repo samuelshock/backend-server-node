@@ -15,10 +15,7 @@ app.get('/:tipo/:img', (req, res, next) => {
         if (!exist) {
             path = './assets/no-img.jpg';
         }
-        console.log(path);
-
         res.sendFile(path, { root: '.' });
-
     });
 });
 
