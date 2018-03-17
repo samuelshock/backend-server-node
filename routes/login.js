@@ -12,6 +12,19 @@ var UserModel = require('../models/user');
 
 var { OAuth2Client } = require('google-auth-library');
 
+var mdAutentication = require('../middlewares/authentication');
+
+// =================================
+// Renueva token
+// ================================= 
+app.get('/renuevatoken', mdAutentication.verifyToken, (req, res) => {
+    var token = jwt.sign({ user: req.user }, SEED, { expiresIn: 14400 });
+    res.status(200).json({
+        ok: true,
+        token: token
+    });
+});
+
 // =================================
 // Autenticacion de Google
 // ================================= 
