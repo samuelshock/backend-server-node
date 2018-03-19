@@ -1,0 +1,8 @@
+{
+    "name": "Medicos",
+    "description": "este es un modulo de medicos",
+    "dependencies": [],
+    "model": "/medico.model.js",
+    "route": "/medico.route.js",
+    "api_name": "medico"
+}

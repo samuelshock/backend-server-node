@@ -1,10 +1,10 @@
 var express = require('express');
 
-var mdaAthentication = require('../middlewares/authentication');
+const { mdaAthentication } = require('../manager.module').MIDDLEWARES;
 
 var app = express();
 
-var HospitalModel = require('../models/hospital');
+var HospitalModel = require('./hospital.model');
 
 // ======================================
 // Obtener Todos los Hospitales

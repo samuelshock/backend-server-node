@@ -2,6 +2,7 @@
     "name": "Hospital",
     "description": "este es un modulo de hospital",
     "dependencies": [],
-    "model": "./hospital.model.js",
-    "route": "./index.route.js"
+    "model": "/hospital.model.js",
+    "route": "/hospital.route.js",
+    "api_name": "hospital"
 }

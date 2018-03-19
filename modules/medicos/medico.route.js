@@ -1,11 +1,10 @@
 var express = require('express');
 
-var mdaAthentication = require('../middlewares/authentication');
-
+const { mdaAthentication } = require('../manager.module').MIDDLEWARES;
 
 var app = express();
 
-var MedicoModel = require('../models/medico');
+var MedicoModel = require('./medico.model');
 
 // ======================================
 // Obtener Todos los Medicos
