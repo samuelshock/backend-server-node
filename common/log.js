@@ -20,6 +20,7 @@ class LOG {
      * @param  {Express_response} response  This field is a instance of express response.
      */
     saveResponse(response) {
+        console.log(response.statusCode);
         let messageToSave = ['RESPONSE SERVER'];
         messageToSave.push('URL = ' + response.req.originalUrl);
         messageToSave.push('METHOD = ' + response.req.method);

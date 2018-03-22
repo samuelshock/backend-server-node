@@ -21,13 +21,13 @@ app.post('/google', (req, res, next) => {
     var token = req.body.token;
 
     var client = new OAuth2Client(GOOGLE_CLIENT_ID, GOOGLE_SECRET, '');
-    async function verify() {
-        const ticket = await client.verifyIdToken({
+    async(function verify() {
+        const ticket = await (client.verifyIdToken({
             idToken: token,
             audience: GOOGLE_CLIENT_ID, // Specify the CLIENT_ID of the app that accesses the backend
             // Or, if multiple clients access the backend:
             //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
-        });
+        }));
         const payload = ticket.getPayload();
         const userid = payload['sub'];
         // If request specified a G Suite domain:
@@ -91,7 +91,8 @@ app.post('/google', (req, res, next) => {
             }
         });
 
-    }
+    });
+
     verify().catch(err => {
         return res.status(500).json({
             ok: false,

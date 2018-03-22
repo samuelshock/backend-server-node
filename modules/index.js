@@ -1,47 +1,45 @@
-// import { verifyRole } from '../middlewares/authentication';
-
 var express = require('express');
 var router = express.Router();
-const { lstatSync, readdirSync } = require('fs');
-const { join } = require('path');
-const managerModule = require('./manager.module');
-
-const isDirectory = source => lstatSync(source).isDirectory();
-const getFoldersByPath = source =>
-    readdirSync(source).map(name => join(source, name)).filter(isDirectory);
+const ModuleFactory = require('../core_modules/module.factory.producer');
+const { MODULES_PATH } = require('../config/config');
+const modulefactory = new ModuleFactory(MODULES_PATH);
 
 const loadModulesRoutes = () => {
-    var folders = getFoldersByPath('./modules').map(name => name = name.split('\\')[1]);
-    for (let i in folders) {
-        var moduleName = folders[i];
-        var moduleInstall = true;
-        var modulePath = '/' + moduleName + '/';
-        var files = readdirSync('./modules' + modulePath);
-
-        if (files.indexOf('__config_module.json') > -1) {
-            modulePath = `.${ modulePath }__config_module`;
-            var moduleConf = require(modulePath);
-            if (moduleConf.dependencies && Object.keys(moduleConf.dependencies).length > 0) {
-                for (let j in moduleConf.dependencies) {
-                    if (folders.indexOf(moduleConf.dependencies[j]) === -1) {
-                        moduleInstall = false;
-                        console.error('Dependency error module `%s` please install the module ', moduleName, moduleConf.dependencies);
-                    }
-                }
-            }
-            if (moduleConf.api_name && moduleConf.route && moduleInstall) {
-                var path = './' + moduleName + moduleConf.route;
-                router.use('/' + moduleConf.api_name, require(path));
+    return new Promise((resolve, reject) => {
+        let modulesList = modulefactory.getModulesRoutes();
+        for (let i in modulesList.modules) {
+            try {
+                router.use('/' + modulesList.modules[i].route, require(modulesList.modules[i].path));
+            } catch (error) {
+                reject(error);
             }
         }
-    }
+        if (modulesList.errors.length > 0) {
+            reject(modulesList.errors);
+        } else {
+            resolve(true);
+        }
+    });
 }
 
 loadModulesRoutes();
 
+router.get('/load_modules', (req, res, next) => {
+    loadModulesRoutes().then(res => {
+        res.status(200).json({
+            ok: true,
+            message: 'Modulos cargados correctamente'
+        });
+    }).catch(err => {
+        res.status(500).json({
+            ok: false,
+            message: "Error al cargar los modulos",
+            error: err
+        });
+    });
+});
 
 router.get('/', (req, res, next) => {
-
     res.status(200).json({
         ok: true,
         message: 'Peticion realizada correctamente'

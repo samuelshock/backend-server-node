@@ -1,70 +1,48 @@
-const NOT_FOUND = 404;
-const SUCCESSFULL = 200;
-const INTERNAL_SERVER_ERROR = 500;
-
-const ErrorList = {
-	401: "Unauthorized",
-	200: "success",
-	500: "server error",
-	404: "not Found"
-};
+const HTTP_CODES = require('./http_response_codes');
 
 /**
  * Class for create a template of responses.
  */
 class Response {
-	/**
-	 * @param  {} data      description
-	 * @param  {} code      description
-	 * @param  {} title     description
-	 * @param  {} message   description
-	 */
-	static response(response, data, title, code, message) {
-		let tmpCode = 500;
-		if(code && code >= 200){
-			tmpCode = code;
-		}
-		let res = {
-			'data': data,
-			'code': tmpCode,
-			'title': title,
-			'message': message
-		};
-		response.status(tmpCode);
-		response.json(res);
 
-	}
 
-	/**
-	 * Return the code 200(Successful)
-	 */
-	static successful() {
-		return SUCCESSFULL;
-	}
-	/**
-	 * Return the code 404(Not Found)
-	 */
-	static notFound() {
-		return NOT_FOUND;
-	}
+    constructor(model) {
+            this.model = model;
+        }
+        /**
+         * @param  {} data      description
+         * @param  {} code      description
+         * @param  {} message   description
+         */
+    static response(response, data, code, message) {
+        let resOption = getOptionResponse(code);
+        let res = {
+            [resOption.data]: data,
+            [resOption.title]: title,
+            ok: resOption.ok,
+            message: message
+        };
+        response.status(code);
+        response.json(res);
 
-	/**
-	 * Return the code 500(Internal server error)
-	 */
-	static internalServerError() {
-		return INTERNAL_SERVER_ERROR;
-	}
+    }
 
-	/**
-	 * Method to handleError
-	 * @param {} error
-	 */
-	static responseError(error) {
-		return {
-			"status": error.statusCode,
-			"error": ErrorList[error.statusCode]
-		};
-	}
+    static getOptionResponse(code) {
+        res = {
+            data: null,
+            title: null,
+            ok: false
+        };
+        if (code >= 200 && code < 300) {
+            res.ok = true;
+            res.data = this.model;
+            res.title = HTTP_CODES[code];
+        } else {
+            res.data = 'error';
+            res.title = HTTP_CODES[code];
+        }
+    }
+
 }
 
 module.exports = Response;

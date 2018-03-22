@@ -1,0 +1,120 @@
+2018.03.20, 22:37:40.0354 UTC -> RESPONSE SERVER
+URL = /hospital
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"e6d53317-d368-4f0a-9dfd-01804b503934","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"ok":true,"hospitales":[{"_id":"5a9706b109ae2724acc309f2","nombre":"Hospital test8","user":null,"__v":0},{"_id":"5a9706b509ae2724acc309f3","nombre":"Hospital test9","user":null,"__v":0},{"_id":"5a9706b909ae2724acc309f4","nombre":"Hospital test10","user":null,"__v":0},{"_id":"5aa823f69a499e2ff87eb75a","nombre":"materno infantil","user":{"_id":"5a9f0729f2088121a4b8e54c","name":"test actualizar","email":"samuelchq418@gmail.com"},"__v":0,"img":"5aa823f69a499e2ff87eb75a-236.jpg"}],"total":4}
+2018.03.20, 22:37:45.0283 UTC -> RESPONSE SERVER
+URL = /hospital
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"23275dc9-a001-46ac-be7d-30792e3cf4b0","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"ok":true,"hospitales":[{"_id":"5a9706b109ae2724acc309f2","nombre":"Hospital test8","user":null,"__v":0},{"_id":"5a9706b509ae2724acc309f3","nombre":"Hospital test9","user":null,"__v":0},{"_id":"5a9706b909ae2724acc309f4","nombre":"Hospital test10","user":null,"__v":0},{"_id":"5aa823f69a499e2ff87eb75a","nombre":"materno infantil","user":{"_id":"5a9f0729f2088121a4b8e54c","name":"test actualizar","email":"samuelchq418@gmail.com"},"__v":0,"img":"5aa823f69a499e2ff87eb75a-236.jpg"}],"total":4}
+2018.03.20, 22:40:14.0172 UTC -> RESPONSE SERVER
+URL = /hospital
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"7ed9d06d-7fa1-423e-af59-6aae6b149f83","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"ok":true,"hospitales":[{"_id":"5a9706b109ae2724acc309f2","nombre":"Hospital test8","user":null,"__v":0},{"_id":"5a9706b509ae2724acc309f3","nombre":"Hospital test9","user":null,"__v":0},{"_id":"5a9706b909ae2724acc309f4","nombre":"Hospital test10","user":null,"__v":0},{"_id":"5aa823f69a499e2ff87eb75a","nombre":"materno infantil","user":{"_id":"5a9f0729f2088121a4b8e54c","name":"test actualizar","email":"samuelchq418@gmail.com"},"__v":0,"img":"5aa823f69a499e2ff87eb75a-236.jpg"}],"total":4}
+2018.03.20, 22:40:44.0736 UTC -> RESPONSE SERVER
+URL = /hospital
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"d911d6a7-4068-4205-a3ab-ed12d0518856","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"ok":true,"hospitales":[{"_id":"5a9706b109ae2724acc309f2","nombre":"Hospital test8","user":null,"__v":0},{"_id":"5a9706b509ae2724acc309f3","nombre":"Hospital test9","user":null,"__v":0},{"_id":"5a9706b909ae2724acc309f4","nombre":"Hospital test10","user":null,"__v":0},{"_id":"5aa823f69a499e2ff87eb75a","nombre":"materno infantil","user":{"_id":"5a9f0729f2088121a4b8e54c","name":"test actualizar","email":"samuelchq418@gmail.com"},"__v":0,"img":"5aa823f69a499e2ff87eb75a-236.jpg"}],"total":4}
+2018.03.20, 22:41:56.0357 UTC -> RESPONSE SERVER
+URL = /hospital
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"5de57a7d-8026-4fa8-a8df-2e3d95373f1c","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"ok":true,"hospitales":[{"_id":"5a9706b109ae2724acc309f2","nombre":"Hospital test8","user":null,"__v":0},{"_id":"5a9706b509ae2724acc309f3","nombre":"Hospital test9","user":null,"__v":0},{"_id":"5a9706b909ae2724acc309f4","nombre":"Hospital test10","user":null,"__v":0},{"_id":"5aa823f69a499e2ff87eb75a","nombre":"materno infantil","user":{"_id":"5a9f0729f2088121a4b8e54c","name":"test actualizar","email":"samuelchq418@gmail.com"},"__v":0,"img":"5aa823f69a499e2ff87eb75a-236.jpg"}],"total":4}
+2018.03.20, 22:42:01.0832 UTC -> RESPONSE SERVER
+URL = /
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"b72fbaab-644b-4500-bc82-8a241fd7ca1e","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"ok":true,"message":"Peticion realizada correctamente"}
+2018.03.20, 22:42:36.0703 UTC -> RESPONSE SERVER
+URL = /
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"9a5d3a74-182e-4997-88b7-51be3ae2dcac","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"ok":true,"message":"Peticion realizada correctamente"}
+2018.03.20, 22:45:33.0769 UTC -> RESPONSE SERVER
+URL = /
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"0d80b3ad-caed-4cd2-ab0b-187a25e8c0a9","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"ok":true,"message":"Peticion realizada correctamente"}
+2018.03.20, 22:45:46.0542 UTC -> RESPONSE SERVER
+URL = /
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"0f1e45a4-f3a5-4d60-8ff0-527fee07de8b","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"ok":true,"message":"Peticion realizada correctamente"}
+2018.03.20, 23:01:22.0879 UTC -> RESPONSE SERVER
+URL = /
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"f5c5538a-5a16-4d4b-96ef-c272b328e72b","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"ok":true,"message":"Peticion realizada correctamente"}
+2018.03.20, 23:01:40.0229 UTC -> RESPONSE SERVER
+URL = /load_modules
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"53c541e0-42e9-42fa-a0ea-a43567f57fda","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"message":"Error al cargar los modulos","error":[{"message":"Missing Dependency uploads in module especialidades"}]}
+2018.03.20, 23:10:11.0314 UTC -> RESPONSE SERVER
+URL = /load_modules
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"6367a262-9a03-4a53-9a83-79bba2d1e89f","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"message":"Error al cargar los modulos","error":[{"message":"Missing Dependency uploads in module especialidades"}]}
+2018.03.20, 23:12:15.0158 UTC -> RESPONSE SERVER
+URL = /load_modules
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"6d9ada39-2790-4222-b62e-a6f08db59e5d","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"ok":false,"message":"Error al cargar los modulos","error":[{"message":"Missing Dependency uploads in module especialidades"}]}
+2018.03.20, 23:38:16.0702 UTC -> RESPONSE SERVER
+URL = /load_modules
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"ab912463-5c36-4a82-af45-12383b182bf3","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"ok":false,"message":"Error al cargar los modulos","error":[{"message":"Missing Dependency uploads in module especialidades"}]}
+2018.03.20, 23:38:57.0799 UTC -> RESPONSE SERVER
+URL = /load_modules
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"6b2281d7-853b-44c8-b872-7a6ae991bca6","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"ok":false,"message":"Error al cargar los modulos","error":[{"message":"Missing Dependency uploads in module especialidades"}]}

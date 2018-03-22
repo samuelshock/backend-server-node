@@ -2,9 +2,10 @@
     "name": "Especialidades - Hospital",
     "description": "este es un modulo de especialidades",
     "dependencies": [
-        "hospital"
+        "hospital", "uploads"
     ],
-    "model": "./especialidad.model.js",
-    "route": "./index.route.js",
-    "middleware": "./especialidad.middleware.js"
+    "model": "/especialidad.model.js",
+    "route": "/especialidad.route.js",
+    "middleware": "/especialidad.middleware.js",
+    "api_name": "especialidad"
 }

@@ -1,0 +1,15 @@
+{
+    "200": "Success",
+    "201": "Created",
+    "202": "Accepted",
+    "400": "Bad Request Server didn't understand the URL you gave it.",
+    "401": "Unauthorized Must be authenticated",
+    "402": "Payment Required Not used really",
+    "403": "Forbidden Server refuses to give you a file, authentication won't help",
+    "404": "Not Found A file doesn't exist at that address",
+    "405": "Method Not Allowed",
+    "406": "Not Acceptable",
+    "407": "Proxy Authentication Required",
+    "408": "Request Timeout",
+    "500": "Internal Server Error"
+}

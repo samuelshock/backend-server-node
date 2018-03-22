@@ -6,3 +6,5 @@ module.exports.GOOGLE_SECRET = '2h0SOaApEPp1Jo_WFknIdvnF';
 
 // API Application
 module.exports.URL_API = '/';
+
+module.exports.MODULES_PATH = './modules';

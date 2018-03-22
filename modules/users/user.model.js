@@ -1,13 +1,7 @@
 var mongoose = require('mongoose');
 var uniqueValidator = require('mongoose-unique-validator');
 
-
 var Schema = mongoose.Schema;
-
-var validRoles = {
-    values: ['ADMIN_ROLE', 'USER_ROLE'],
-    message: '{VALUE} no es un rol permitido'
-};
 
 var userSchema = new Schema({
     name: { type: String, required: [true, 'El nombre es necesario'] },
@@ -15,9 +9,9 @@ var userSchema = new Schema({
     password: { type: String, required: [true, 'La contrasena es necesaria'] },
     img: { type: String, required: false },
     role: { type: String, required: true, default: 'USER_ROLE', enum: validRoles },
-    google: { type: Boolean, required: true, default: false }
-});
+    // google: { type: Boolean, required: true, default: false }
+}, { collection: 'users', discriminatorKey: '_type' });
 
 userSchema.plugin(uniqueValidator, { message: 'El {PATH} ya fue registrado.' });
 
-module.exports = mongoose.model('usuarios', userSchema);
+module.exports = mongoose.model('users', userSchema);
