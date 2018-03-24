@@ -8,3 +8,5 @@ module.exports.GOOGLE_SECRET = '2h0SOaApEPp1Jo_WFknIdvnF';
 module.exports.URL_API = '/';
 
 module.exports.MODULES_PATH = './modules';
+
+module.exports.LIMIT_PER_REQUEST = 5;

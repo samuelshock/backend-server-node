@@ -1,0 +1,8 @@
+{
+    "name": "Usuarios",
+    "description": "este es un modulo de usuarios",
+    "dependencies": [],
+    "model": "/user.model.js",
+    "route": "/user.route.js",
+    "api_name": "usuarios"
+}

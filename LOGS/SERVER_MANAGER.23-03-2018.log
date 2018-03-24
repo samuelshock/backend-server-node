@@ -1,0 +1,314 @@
+2018.03.23, 23:00:45.0487 UTC -> RESPONSE SERVER
+URL = /user
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"c457da23-0241-4332-9baa-1d8cb41411b2","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"ok":true,"users":[{"role":"ADMIN_ROLE","google":true,"_id":"5a9f0729f2088121a4b8e54c","name":"test actualizar","email":"samuelchq418@gmail.com","img":"https://lh5.googleusercontent.com/-IvnUk6Qr-4U/AAAAAAAAAAI/AAAAAAAAADE/jC_LpFW0uIQ/s96-c/photo.jpg"},{"role":"USER_ROLE","google":false,"_id":"5aa979cc2190813510a837d5","name":"test 1 profile","email":"test1@test.com"},{"role":"USER_ROLE","google":false,"_id":"5aa97a0d2190813510a837d6","name":"test2","email":"test2@test.com"}],"total":3}
+2018.03.23, 23:01:32.0202 UTC -> RESPONSE SERVER
+URL = /load_modules
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"023c76c7-c2d8-4088-bfc7-9ba3d8d28518","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"ok":false,"message":"Error al cargar los modulos","error":{}}
+2018.03.23, 23:01:55.0547 UTC -> RESPONSE SERVER
+URL = /load_modules
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"4f3fcb3f-cb62-497c-8bd5-64d58f681b62","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"ok":false,"message":"Error al cargar los modulos","error":{}}
+2018.03.23, 23:06:59.0559 UTC -> RESPONSE SERVER
+URL = /hospital
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"eac6f708-f0b8-4eb0-b753-5c660b943e69","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"ok":true,"hospitales":[{"_id":"5a9706b109ae2724acc309f2","nombre":"Hospital test8","user":null,"__v":0},{"_id":"5a9706b509ae2724acc309f3","nombre":"Hospital test9","user":null,"__v":0},{"_id":"5a9706b909ae2724acc309f4","nombre":"Hospital test10","user":null,"__v":0},{"_id":"5aa823f69a499e2ff87eb75a","nombre":"materno infantil","user":{"_id":"5a9f0729f2088121a4b8e54c","name":"test actualizar","email":"samuelchq418@gmail.com"},"__v":0,"img":"5aa823f69a499e2ff87eb75a-236.jpg"}],"total":4}
+2018.03.23, 23:28:12.0762 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"b7924c3a-f36e-4811-9dc2-4c8008e1f0cf","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"usuarios":{},"title":"Success","ok":true,"message":"exito"}
+2018.03.23, 23:56:24.0983 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"ed586508-0b69-4c86-9f8d-6b707a90eaf7","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"usuarios":[],"title":"Success","ok":true,"message":"exito"}
+2018.03.23, 23:56:24.0987 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"ed586508-0b69-4c86-9f8d-6b707a90eaf7","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"usuarios":[],"title":"Success","ok":true,"message":"exito"}
+response:
+{"title":"Internal Server Error","ok":false,"message":"Error al buscar usuarios"}
+2018.03.23, 23:58:23.0051 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = GET
+BODY = undefined
+HEADERS = {"cache-control":"no-cache","postman-token":"fdc57dbd-cde6-4a80-afc1-7a7e307e550a","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"usuarios":[],"title":"Success","ok":true,"message":"exito"}
+2018.03.24, 00:07:07.0345 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = POST
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"8a18f27c-726e-4cb9-82d0-cd61e371eca2","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","content-length":"52","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"error":{},"title":"Internal Server Error","ok":false,"message":"Error al crear usuario"}
+2018.03.24, 00:08:40.0738 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = POST
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"900472f1-428f-45d8-98e9-e4011ed1425c","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","content-length":"36","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"error":{},"title":"Internal Server Error","ok":false,"message":"Error al crear usuario"}
+2018.03.24, 00:12:00.0069 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = POST
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"4ce5252b-a1e2-4ad9-b682-7d799df0d306","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","content-length":"36","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"error":{"errors":{"name":{"message":"El nombre es necesario","name":"ValidatorError","properties":{"message":"El nombre es necesario","type":"required","path":"name"},"kind":"required","path":"name","$isValidatorError":true}},"_message":"users validation failed","message":"users validation failed: name: El nombre es necesario","name":"ValidationError"},"title":"Internal Server Error","ok":false,"message":"Error al crear usuario"}
+2018.03.24, 00:12:33.0625 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = POST
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"5e40eee9-deec-4fd7-afe6-e559cc5cfa46","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","content-length":"52","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"usuarios":{"name":"Sam test","password":"$2a$10$hpBg.mKGjnhmI6JHavd8I.2sZa0ACwwM/RJYP8dgS.EAkitE7N5ii","email":"sam@test.com","_id":"5ab597f122456a2a7492c781","__v":0},"title":"Success","ok":true,"message":"El usuario se creo correctamente"}
+2018.03.24, 00:13:18.0180 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = GET
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"384a15fe-331e-4127-aa55-7423bb277b82","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"usuarios":[{"_id":"5ab597f122456a2a7492c781","name":"Sam test","email":"sam@test.com"}],"title":"Success","ok":true,"message":"exito"}
+2018.03.24, 00:16:51.0595 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = POST
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"653d3708-38b9-41b0-8fcc-f86ef428b6df","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","content-length":"52","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"error":{"errors":{"email":{"message":"El email ya fue registrado.","name":"ValidatorError","properties":{"message":"El {PATH} ya fue registrado.","type":"unique","path":"email","value":"sam@test.com"},"kind":"unique","path":"email","value":"sam@test.com","$isValidatorError":true}},"_message":"users validation failed","message":"users validation failed: email: El email ya fue registrado.","name":"ValidationError"},"title":"Internal Server Error","ok":false,"message":"Error al crear usuario"}
+2018.03.24, 00:17:06.0038 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = GET
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"0c7ea930-2e25-44ac-bd23-76a058d0ec0e","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"usuarios":[{"_id":"5ab597f122456a2a7492c781","name":"Sam test","email":"sam@test.com"}],"title":"Success","ok":true,"message":"exito"}
+2018.03.24, 00:19:01.0658 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = GET
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"e538d19b-6c28-4996-bc04-e0d5a74dbb07","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"usuarios":[{"_id":"5ab597f122456a2a7492c781","name":"Sam test","email":"sam@test.com"}],"title":"Success","ok":true,"message":"exito"}
+2018.03.24, 00:20:06.0570 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = GET
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"e6f6e9c5-b18f-4669-9524-f57130c48581","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"usuarios":[{"_id":"5ab597f122456a2a7492c781","name":"Sam test","email":"sam@test.com"}],"title":"Success","ok":true,"message":"exito"}
+2018.03.24, 00:21:51.0912 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = GET
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"1ace066f-8aef-4314-8ff5-b0b9b62df245","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"usuarios":[{"_id":"5ab597f122456a2a7492c781","name":"Sam test","email":"sam@test.com"}],"title":"Success","ok":true,"message":"exito"}
+2018.03.24, 00:22:52.0189 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = GET
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"7a5d0586-2acd-4896-b62e-3da0e7d09b34","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"usuarios":[{"_id":"5ab597f122456a2a7492c781","name":"Sam test","email":"sam@test.com"}],"title":"Success","ok":true,"message":"exito"}
+2018.03.24, 00:23:22.0095 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = GET
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"bd554b3d-d2f8-4ef2-9d09-f57969ca4921","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"usuarios":[{"_id":"5ab597f122456a2a7492c781","name":"Sam test","email":"sam@test.com"}],"title":"Success","ok":true,"message":"exito"}
+2018.03.24, 00:25:11.0439 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = GET
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"85aa1423-a792-4eab-bd64-2f5670caf6f7","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"usuarios":[{"_id":"5ab597f122456a2a7492c781","name":"Sam test","email":"sam@test.com"}],"title":"Success","ok":true,"message":"exito"}
+2018.03.24, 00:25:55.0679 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = GET
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"449cfbe7-8217-410f-80fc-c801bbbb1086","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"usuarios":[{"_id":"5ab597f122456a2a7492c781","name":"Sam test","email":"sam@test.com"}],"title":"Success","ok":true,"message":"exito"}
+2018.03.24, 00:27:25.0421 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = GET
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"947a39a1-368c-446d-8f0a-a8d008723f86","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"usuarios":[{"_id":"5ab597f122456a2a7492c781","name":"Sam test","email":"sam@test.com"}],"title":"Success","ok":true,"message":"exito","total":1}
+2018.03.24, 00:28:27.0669 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = GET
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"a24da78d-acee-44d5-8d0f-3c2cd6605874","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"usuarios":[{"_id":"5ab597f122456a2a7492c781","name":"Sam test","email":"sam@test.com"}],"title":"Success","ok":true,"message":"exito","total":1}
+2018.03.24, 00:29:37.0014 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = POST
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"787166c3-dbf9-42f0-bac3-43b615214c5a","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","content-length":"57","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"usuarios":{"name":"Sam test 2","password":"$2a$10$gCfRlt8fZRrx/lzpJkUWpOwoBuTtkuiGRwkipumluZztaHwtXlb.S","email":"sam2@test.com","_id":"5ab59bf0a7c2563a94ad59e6","__v":0},"title":"Success","ok":true,"message":"El usuario se creo correctamente"}
+2018.03.24, 00:29:51.0200 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = GET
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"caee822d-64f6-4437-9746-e4578c6f742c","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"usuarios":[{"_id":"5ab597f122456a2a7492c781","name":"Sam test","email":"sam@test.com"},{"_id":"5ab59bf0a7c2563a94ad59e6","name":"Sam test 2","email":"sam2@test.com"}],"title":"Success","ok":true,"message":"exito","total":2}
+2018.03.24, 00:47:38.0427 UTC -> RESPONSE SERVER
+URL = /usuarios/5ab59bf0a7c2563a94ad59e6
+METHOD = PUT
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"5da03e47-55ba-4fab-8b41-4bbab0b97fd2","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","content-length":"47","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"error":{},"title":"Internal Server Error","ok":false,"message":"Error al Actualizar usuario"}
+2018.03.24, 00:48:19.0532 UTC -> RESPONSE SERVER
+URL = /usuarios/5ab59bf0a7c2563a94ad59e6
+METHOD = PUT
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"ebb38e7e-c066-44fb-a5bb-9216ba845562","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","content-length":"47","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"error":{},"title":"Bad Request Server didn't understand the URL you gave it.","ok":false,"message":"Error al Actualizar usuario"}
+2018.03.24, 00:50:15.0111 UTC -> RESPONSE SERVER
+URL = /usuarios/5ab59bf0a7c2563a94ad59e6
+METHOD = PUT
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"ab4a1b4f-2c78-4a53-9ee8-d5c9b17df491","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","content-length":"47","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"error":{},"title":"Bad Request Server didn't understand the URL you gave it.","ok":false,"message":"Error al Actualizar usuario"}
+2018.03.24, 00:52:22.0309 UTC -> RESPONSE SERVER
+URL = /usuarios/5ab59bf0a7c2563a94ad59e6
+METHOD = PUT
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"41a94101-6e10-4ba6-bda4-e58c7c06f04e","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","content-length":"47","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"error":{},"title":"Bad Request Server didn't understand the URL you gave it.","ok":false,"message":"Error al Actualizar usuario"}
+2018.03.24, 00:53:38.0257 UTC -> RESPONSE SERVER
+URL = /usuarios/5ab59bf0a7c2563a94ad59e6
+METHOD = PUT
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"ea8acca4-b8c8-4582-a3c8-b0f4be635d14","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","content-length":"47","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"error":{},"title":"Bad Request Server didn't understand the URL you gave it.","ok":false,"message":"Error al Actualizar usuario"}
+2018.03.24, 00:55:12.0437 UTC -> RESPONSE SERVER
+URL = /usuarios/5ab59bf0a7c2563a94ad59e6
+METHOD = PUT
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"bdff8584-402f-494b-8b01-b74cf801f02c","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","content-length":"47","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"error":{},"title":"Bad Request Server didn't understand the URL you gave it.","ok":false,"message":"Error al Actualizar usuario"}
+2018.03.24, 00:55:48.0611 UTC -> RESPONSE SERVER
+URL = /usuarios/5ab59bf0a7c2563a94ad59e6
+METHOD = PUT
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"39a4e4de-cf4a-4d01-a578-b5788fb12b6c","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","content-length":"47","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"error":{},"title":"Bad Request Server didn't understand the URL you gave it.","ok":false,"message":"Error al Actualizar usuario"}
+2018.03.24, 00:57:12.0020 UTC -> RESPONSE SERVER
+URL = /usuarios/5ab59bf0a7c2563a94ad59e6
+METHOD = PUT
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"9ee35bea-df8f-4058-8a8f-42d6577ab5b4","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","content-length":"47","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"usuario":{"_id":"5ab59bf0a7c2563a94ad59e6","name":"Sam test updated","password":"$2a$10$gCfRlt8fZRrx/lzpJkUWpOwoBuTtkuiGRwkipumluZztaHwtXlb.S","email":"sam2@test.com","__v":0},"title":"Success","ok":true,"message":"exito"}
+2018.03.24, 00:58:00.0368 UTC -> RESPONSE SERVER
+URL = /usuarios/5ab59bf0a7c2563a94ad59e6
+METHOD = PUT
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"4cc79c25-d1a0-4cb4-ae30-7241fd269873","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","content-length":"47","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"usuario":{"_id":"5ab59bf0a7c2563a94ad59e6","name":"Sam test updated","password":"(:","email":"sam2@test.com","__v":0},"title":"Success","ok":true,"message":"exito"}
+2018.03.24, 01:02:33.0024 UTC -> RESPONSE SERVER
+URL = /usuarios/5ab59bf0a7c2563a94ad5
+METHOD = PUT
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"db0a9e54-4f58-4d01-ad63-90a10995e823","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","content-length":"47","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"error":{"message":"Cast to ObjectId failed for value \"5ab59bf0a7c2563a94ad5\" at path \"_id\" for model \"users\"","name":"CastError","stringValue":"\"5ab59bf0a7c2563a94ad5\"","kind":"ObjectId","value":"5ab59bf0a7c2563a94ad5","path":"_id"},"title":"Bad Request Server didn't understand the URL you gave it.","ok":false,"message":"Error al Actualizar usuario"}
+2018.03.24, 01:07:55.0147 UTC -> RESPONSE SERVER
+URL = /usuarios/
+METHOD = GET
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"a62669ec-f11a-4e83-81d8-2a75ce8c6026","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"usuarios":[{"_id":"5ab597f122456a2a7492c781","name":"Sam test","email":"sam@test.com"},{"_id":"5ab59bf0a7c2563a94ad59e6","name":"Sam test updated","email":"sam2@test.com"}],"title":"Success","ok":true,"message":"exito","total":2}
+2018.03.24, 01:08:05.0762 UTC -> RESPONSE SERVER
+URL = /usuarios/5ab59bf0a7c2563a94ad59e6
+METHOD = DELETE
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"9d52e0c7-a5de-48fe-8173-1701c7758b31","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","content-length":"47","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"error":{},"title":"Bad Request Server didn't understand the URL you gave it.","ok":false,"message":"Error al eliminar usuario"}
+2018.03.24, 01:09:50.0462 UTC -> RESPONSE SERVER
+URL = /usuarios/5ab59bf0a7c2563a94ad59e6
+METHOD = DELETE
+BODY = undefined
+HEADERS = {"content-type":"application/x-www-form-urlencoded","cache-control":"no-cache","postman-token":"965d00df-2ffd-492d-a805-17cc55439171","user-agent":"PostmanRuntime/7.1.1","accept":"*/*","host":"localhost:3000","accept-encoding":"gzip, deflate","content-length":"47","connection":"keep-alive"}
+STATUS CODE = 200
+response:
+{"usuario":{"_id":"5ab59bf0a7c2563a94ad59e6","name":"Sam test updated","password":"$2a$10$gCfRlt8fZRrx/lzpJkUWpOwoBuTtkuiGRwkipumluZztaHwtXlb.S","email":"sam2@test.com","__v":0},"title":"Success","ok":true,"message":"Usuario eliminado correctamente"}
